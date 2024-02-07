@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+
+<div class="main-form">
+    <h1>Edit your post!</h1>
+
+    <form action="/updated?_method=PUT" method="POST">
+
+        <!-- Name input -->
+        <div class="form-view">
+          <input type="text" id="form4Example1" class="form-control" name="title" value="<%= posts[id].title %>" />
+          <label class="form-label" for="form4Example1"></label>
+        </div>
+      
+        <!-- Message input -->
+        <div class="form-view">
+          <textarea class="form-control" id="form4Example3" rows="4" name="desc"><%= posts[id].desc %></textarea>
+          <label class="form-label" for="form4Example3"></label>
+        </div>
+
+        <input type="text" name="getId" value=<%= id %> readonly hidden>
+      
+        <button type="submit" class="inspect-btn">
+            Send
+          </button>
+        
+
+      </form>
+
+      <form action="/deleted?_method=DELETE" method="POST">
+
+        <input type="text" name="getId" value=<%= id %> readonly hidden>
+
+        <button type="submit" class="inspect-btn">Delete resource</button>
+    
+      </form>
+
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>
+
+
+
+
+
+
+
+
+
+
